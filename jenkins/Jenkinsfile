@@ -19,9 +19,13 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh './jenkins/scripts/deliver.sh' 
-                input message: 'Silahkan tunggu selama 1 menit' 
-                sh 'sleep 300'
+                input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)' 
                 sh './jenkins/scripts/kill.sh' 
+            }
+        }
+        stage('tunggu 1 menit') { 
+            steps {
+                sh 'sleep 60' 
             }
         }
     }
