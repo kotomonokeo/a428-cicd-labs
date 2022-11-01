@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 input message: 'Silahkan tunggu selama 1 menit' 
-                sh 'sleep 300'
+                sh 'sleep 60'
                 sh './jenkins/scripts/kill.sh' 
             }
         }
